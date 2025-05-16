@@ -1,0 +1,56 @@
+<!--
+/**
+ * Application Météo - Interface utilisateur
+ * Copyright (c) 2025 Appli météo. Tous droits réservés.
+ * 
+ * @author LACOUR Alexandre
+ * @version 1.0
+ * @description Application météo permettant
+ *              la recherche et l'affichage des conditions météorologiques
+ *              pour une ville donnée.
+ * 
+ * Ce code est protégé par les lois sur le droit d'auteur et ne peut être
+ * utilisé sans autorisation explicite.
+ */
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Appli Météo - TP1</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Lien CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+</head>
+<body>
+<header>
+    <div class="app-title">
+        <h1>SkySentry</h1>
+    </div>
+    <nav>
+        <button id="home">Accueil</button>
+        <button id="contact">Contact</button>
+        <button id="help">Aide</button>
+    </nav>
+</header>
+<main>
+    <section id="citySearch">
+        <input type="text" id="cityInput" placeholder="Entrez la ville">
+        <button id="submitCity">Valider</button>
+    </section>
+
+    <div id="weatherForecast">
+        <h2>Prévisions météo</h2>
+        <div id="forecastBody">
+
+        </div>
+    </div>
+</main>
+<footer>
+    <p>©2025 Appli météo - Alexandre LACOUR</p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>

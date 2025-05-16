@@ -1,0 +1,261 @@
+/* Styles globaux */
+html, body {
+    height: 100%;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #ffffff, #e6f7ff) fixed;
+    color: #333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f9fd;
+}
+
+/* En-tête */
+header {
+    background-color: #006bb3;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+header .app-title {
+    flex-grow: 1;
+    text-align: left;
+    color: white;
+}
+
+header .app-title h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+header button {
+    background-color: #005082;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+header button:hover {
+    background-color: #003f66;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Section principale */
+main {
+    flex: 1;
+    padding: 40px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 100px 100px;
+    max-width: 100%;
+}
+
+#citySearch {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#cityInput {
+    flex-grow: 1;
+    padding: 12px 15px;
+    border: 2px solid #006bb3;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+
+#cityInput:focus {
+    box-shadow: 0 0 6px #006bb3;
+}
+
+#submitCity {
+    background-color: #006bb3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#submitCity:hover {
+    background-color: #004a82;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Affichage météo */
+#weatherForecast {
+    margin-top: 30px;
+}
+
+.weather-line {
+    display: flex;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 10px;
+    align-items: center;
+    background-color: #f4f9fd;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.weather-line:hover {
+    background-color: #e6f0fa;
+    transform: scale(1.01);
+}
+
+.weather-line-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.city-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.temperature {
+    color: #0077c2;
+    font-size: 1.1rem;
+}
+
+.expand-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.expand-circle::before {
+    content: "▶";
+    font-size: 1.2rem;
+    color: #0077c2;
+    transition: transform 0.2s ease;
+}
+
+.expand-circle.open::before {
+    transform: rotate(90deg);
+}
+
+.weather-details {
+    display: none;
+    margin-top: 0;
+    padding: 10px 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #555;
+    position: relative;
+    z-index: 1;
+}
+
+.weather-details.open {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Prévisions 5 jours */
+.forecast-5day {
+    margin-top: 30px;
+}
+
+.forecast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.forecast-day {
+    background-color: #f4f9fd;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.forecast-day:hover {
+    background-color: #e6f0fa;
+    transform: scale(1.05);
+}
+
+.forecast-day p {
+    margin: 5px 0;
+}
+
+.forecast-day i {
+    font-size: 1.5rem;
+}
+
+/* Pied de page */
+footer {
+    background-color: #006bb3;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #citySearch {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #cityInput {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    main {
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .forecast-grid {
+        grid-template-columns: 1fr;
+    }
+}
