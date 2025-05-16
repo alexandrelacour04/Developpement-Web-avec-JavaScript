@@ -41,9 +41,6 @@ projet-meteo/
       Puis aller à `http://localhost:8000`.
 4. **Suivre le readme du TP** : Chaque TP a son propre `readme.md` avec des instructions détaillées.
 
-## Pourquoi Vue.js dans TP 3 ?
-Le TP 3 utilise Vue.js pour rendre l'application météo plus dynamique. Il introduit des concepts comme le binding réactif (`v-model`), les boucles (`v-for`), et les conditions (`v-if`). Le repo inclut ce TP pour montrer comment j'ai implémenté ces fonctionnalités, comme l'affichage des prévisions sur 5 jours et les détails météo avancés.
-
 ## Remarques
 - La clé API OpenWeatherMap dans le code est pour un usage éducatif. Pour un usage personnel, remplacez-la (voir `https://openweathermap.org/`).
 - Ce repo est destiné à l'évaluation des TPs par les enseignants et peut être utilisé comme portfolio de mes compétences en développement web.

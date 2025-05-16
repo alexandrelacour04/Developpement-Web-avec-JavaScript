@@ -1,0 +1,55 @@
+.task-card {
+    transition: all 0.3s;
+}
+
+.task-card:hover {
+    transform: scale(1.02);
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.filters {
+    margin-bottom: 1.5rem;
+}
+
+/* Couleurs des vignettes */
+.bg-gray {
+    background-color: #e9ecef; /* Gris */
+}
+.bg-blue {
+    background-color: #d0ebff; /* Bleu clair */
+}
+.bg-green {
+    background-color: #d4edda; /* Vert clair */
+}
+
+/* Styles pour les badges de priorité */
+.priority-badge {
+    display: inline-block;
+    padding: 0.4em 0.7em;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+/* Couleurs des badges */
+.bg-danger {
+    background-color: #dc3545; /* Rouge */
+}
+.bg-warning {
+    background-color: #ffc107; /* Jaune orangé */
+}
+.bg-success {
+    background-color: #28a745; /* Vert */
+}
+
+/* Style pour le texte barré dans les tâches terminées */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
