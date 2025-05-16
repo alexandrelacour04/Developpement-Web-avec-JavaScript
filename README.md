@@ -9,7 +9,8 @@ Le repository inclut les fichiers sources des TPs, avec des dossiers pour chaque
 - **TP 1** : Création d'une interface de base pour l'application météo avec HTML, CSS, et JavaScript vanilla (saisie utilisateur, affichage statique).
 - **TP 2** : Ajout de requêtes à l'API OpenWeatherMap avec jQuery pour afficher les conditions météo actuelles d'une ville.
 - **TP 3** : Migration vers Vue.js, ajout des prévisions sur 5 jours (en utilisant `dt_txt` de l'API), et affichage/masquage des détails avancés (humidité, pression, vent, températures min/max).
-- **TP 4** : 
+- **TP 4** : Création d'une application Todo avec Vue.js et projet d'évaluation et bilan de l'enseignement
+- **TP 5** : React à prévoir...
 
 Chaque TP contient :
 - Les fichiers HTML, CSS, et JavaScript (ex. : `index.html`, `css/styles.css`, `js/app.js`).
