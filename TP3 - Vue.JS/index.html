@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Appli Météo - TP Vue.js</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+<div id="app">
+    <header>
+        <div class="app-title">
+            <h1>SkySentry</h1>
+        </div>
+        <nav>
+            <button @click="navigate('home')">Accueil</button>
+            <button @click="navigate('contact')">Contact</button>
+            <button @click="navigate('help')">Aide</button>
+        </nav>
+    </header>
+    <main>
+        <section id="citySearch">
+            <input v-model="cityInput" type="text" id="cityInput" placeholder="Entrez la ville">
+            <button @click="fetchWeather" id="submitCity">Valider</button>
+        </section>
+        <div id="weatherForecast">
+            <h2>Prévisions météo</h2>
+            <div id="forecastBody">
+                <div v-for="(weather, index) in weatherList" :key="weather.id" class="weather-line">
+                    <div class="weather-line-info">
+                        <i :class="'wi ' + getWeatherIcon(weather.weather[0].id)"></i>
+                        <span class="city-name">{{ weather.name }}</span>
+                        <span class="temperature">{{ weather.main.temp }}°C</span>
+                    </div>
+                    <div class="expand-circle" :class="{ open: weather.showDetails }" @click="toggleDetails(index)"></div>
+                </div>
+                <div v-for="(weather, index) in weatherList" :key="'details-' + weather.id" class="weather-details" :class="{ open: weather.showDetails }">
+                    <p><strong>Description :</strong> {{ weather.weather[0].description }}</p>
+                    <p><i class="wi wi-barometer"></i><strong> Pression :</strong> {{ weather.main.pressure }} hPa</p>
+                    <p><i class="wi wi-humidity"></i><strong> Humidité :</strong> {{ weather.main.humidity }}%</p>
+                    <p><i class="wi wi-strong-wind"></i><strong> Vent :</strong> {{ weather.wind.speed }} m/s</p>
+                    <p><strong>Temp. Min :</strong> {{ weather.main.temp_min }}°C</p>
+                    <p><strong>Temp. Max :</strong> {{ weather.main.temp_max }}°C</p>
+                </div>
+                <div v-if="forecastList.length" class="forecast-5day">
+                    <h3>Prévisions sur 5 jours</h3>
+                    <div class="forecast-grid">
+                        <div v-for="day in forecastList" :key="day.date" class="forecast-day">
+                            <p>{{ formatDate(day.date) }}</p>
+                            <i :class="'wi ' + getWeatherIcon(day.weather[0].id)"></i>
+                            <p>{{ day.main.temp }}°C</p>
+                            <p>{{ day.weather[0].description }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>©2025 Appli météo - Alexandre LACOUR</p>
+    </footer>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
