@@ -52,7 +52,7 @@ La structure des fichiers du projet se présente comme suit :
 
 1. Clonez le projet :
    ```bash
-   git clone <url_du_repository>
+   git clone https://github.com/alexandrelacour04/Developpement-Web-avec-JavaScript.git
    ```
 2. Ouvrez `index.html` dans votre navigateur
 3. Alternative avec serveur local :
